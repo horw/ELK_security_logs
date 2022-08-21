@@ -56,7 +56,7 @@ setup.template.pattern: "security-%{[agent.version]}"
 ## Реализовать парсинг событий
 > Реализация с помощью Regular expression
 
-> ** Note **
+> **Note**
 > Proxy log файл представляет собой строки определенного вида.
 
 Нас интересуют данные относящиеся к destination и source, поэтому re строка будет иметь следующий вид:
