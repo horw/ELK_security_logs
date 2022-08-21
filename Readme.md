@@ -59,7 +59,7 @@ setup.template.pattern: "security-%{[agent.version]}"
 > **Note**
 > Proxy log файл представляет собой строки определенного вида.
 
-Нас интересуют данные относящиеся к destination и source, поэтому re строка будет иметь следующий вид:
+Нас интересуют данные относящиеся к destination и source, поэтому re строка будет иметь следующий вид:\
 ```r'dst=(.*?) dhost=(.*?) suser=(.*?) src=(.*?) sport=(.*?) tierep=(.*?) in=(.*?) out=(.*?) requestMethod=(.*?) request=(.*?) '```
 
 ## Обогатить событие сетевого подключения url адресом из лога proxy 
