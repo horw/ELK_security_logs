@@ -14,8 +14,8 @@
 
 ## Развертывание ELK
 > **Note**
-> Для этого воспользуемся готовой сборкой:\
-> https://github.com/deviantony/docker-elk\
+> Для этого воспользуемся готовой сборкой:
+> https://github.com/deviantony/docker-elk
 Распакуем файлы и  с помошью команды:\
 
 ```docker-compose up```
