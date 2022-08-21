@@ -16,6 +16,7 @@
 > **Note**
 > Для этого воспользуемся готовой сборкой:
 > https://github.com/deviantony/docker-elk
+
 Распакуем файлы и  с помощью команды:
 
 ```docker-compose up```
