@@ -16,8 +16,11 @@
 > Для этого воспользуемся готовой сборкой:\
 > https://github.com/deviantony/docker-elk\
 Распакуем файлы и  с помошью команды:\
+
 docker-compose up\
-Запустим ELK
+После загрузки дополнительных пакетов, запуститься ELK\
+> Для того чтобы отключить аунтификация в config файле docker-elk-main/elasticsearch/config/elasticsearch.yml изменим значение xpack.security.enabled на false (xpack.security.enabled: false)\
+
 
 <h1>Воспользуемся winlogbeat</h1>
 .\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=C:\Users\horw7\OneDrive\Desktop\tinkoff\Security.evtx
