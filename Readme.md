@@ -28,7 +28,8 @@ docker-compose up\
 После того как установили файл с winlogbeat, необходимо обносить его config файл (В данном случае передача данных идет непосредственно elasticsearch, не через logstash)
 [Пример config файла](https://www.elastic.co/guide/en/beats/winlogbeat/current/reading-from-evtx.html)
 
-```winlogbeat.event_logs:
+```
+winlogbeat.event_logs:
   - name: ${EVTX_FILE} 
     no_more_events: stop 
 
