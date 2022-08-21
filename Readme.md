@@ -19,13 +19,16 @@
 
 docker-compose up\
 После загрузки дополнительных пакетов, запуститься ELK\
-> Для того чтобы отключить аунтификация в config файле docker-elk-main/elasticsearch/config/elasticsearch.yml изменим значение xpack.security.enabled на false (xpack.security.enabled: false)\
+> Для того чтобы отключить аунтификация в config файле: docker-elk-main/elasticsearch/config/elasticsearch.yml изменим значение xpack.security.enabled на false (xpack.security.enabled: false)
 
 
-<h1>Воспользуемся winlogbeat</h1>
-.\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=C:\Users\horw7\OneDrive\Desktop\tinkoff\Security.evtx
->https://www.elastic.co/guide/en/beats/winlogbeat/current/reading-from-evtx.html
-winlogbeat.event_logs:
+## Реализовать парсинг событий - Воспользуемся winlogbeat
+[Установочный фаил winlogbeat](https://www.elastic.co/downloads/beats/winlogbeat)
+
+После того как установили файл с winlogbeat, необходимо обносить его config файл (В данном случае передача данных идет непосредственно elasticsearch, не через logstash)
+[Пример config файла](https://www.elastic.co/guide/en/beats/winlogbeat/current/reading-from-evtx.html)
+
+"""winlogbeat.event_logs:
   - name: ${EVTX_FILE} 
     no_more_events: stop 
 
@@ -37,3 +40,10 @@ output.elasticsearch.hosts: ['http://localhost:9200']
 output.elasticsearch.index: "security-%{[agent.version]}"
 setup.template.name: "security"
 setup.template.pattern: "security-%{[agent.version]}"
+"""
+
+После необходимо открыть консоль и воспользоваться следуещей коммандой\
+.\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=(Полный путь к Security.evtx)
+ex: .\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=C:/Security.evtx
+
+
