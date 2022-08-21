@@ -1,0 +1,12 @@
+winlogbeat.event_logs:
+  - name: ${EVTX_FILE} 
+    no_more_events: stop 
+
+winlogbeat.shutdown_timeout: 30s 
+winlogbeat.registry_file: evtx-monitor.yml 
+
+output.elasticsearch.hosts: ['http://localhost:9200']
+
+output.elasticsearch.index: "security-index"
+setup.template.name: "security"
+setup.template.pattern: "security"

@@ -1,0 +1,7 @@
+update_time: 2022-08-21T11:30:01.5335094Z
+event_logs:
+- name: C:\Users\horw7\OneDrive\Desktop\tinkoff\Security.evtx
+  record_number: 8232
+  timestamp: 2022-02-28T17:26:52.9335937Z
+  bookmark: "<BookmarkList>\r\n  <Bookmark Channel='C:\\Users\\horw7\\OneDrive\\Desktop\\tinkoff\\Security.evtx'
+    RecordId='8232' IsCurrent='true'/>\r\n</BookmarkList>"

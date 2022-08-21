@@ -1,0 +1,5 @@
+from search_queries.destAddress import destAddressQuery
+from search_queries.sourceAddress import sourceAddressQuery
+from search_queries.eventType import eventType
+from search_queries.requiredURL import requiredURL
+from search_queries.timeWindow import timeWindow
