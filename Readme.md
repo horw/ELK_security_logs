@@ -22,7 +22,7 @@
 > Для того чтобы отключить аунтификация в config файле: docker-elk-main/elasticsearch/config/elasticsearch.yml изменим значение xpack.security.enabled на false (```xpack.security.enabled: false```)
 
 
-## Реализовать парсинг событий - Воспользуемся winlogbeat
+## Переслать лог в стек elk - Воспользуемся winlogbeat
 [Установочный фаил winlogbeat](https://www.elastic.co/downloads/beats/winlogbeat)
 
 После того как установили файл с winlogbeat, необходимо обносить его config файл (В данном случае передача данных идет непосредственно elasticsearch, не через logstash)
@@ -45,6 +45,16 @@ setup.template.pattern: "security-%{[agent.version]}"
 
 После необходимо открыть консоль и воспользоваться следуещей коммандой\
 ```.\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=(Полный путь к Security.evtx)```\
-ex: ```.\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=C:/Security.evtx```
+Пример: ```.\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=C:/Security.evtx```
 
+После успешной загрузки данных в консоли [Kibana](http://localhost:5601/app/dev_tools#/console) можно проверить правильность данных.
+![image](https://user-images.githubusercontent.com/47724762/185793795-c278e2e6-e6c0-44d3-b7f6-776a0c617463.png)
+
+## Реализовать парсинг событий - Реализация с помощью Regular expression
+
+> ** Note **
+> Proxy log файл представляет собой строки определенного вида.
+
+Нас интересуют данные относящиеся к destination и source, поэтому re строка будет иметь следующий вид:
+```r'dst=(.*?) dhost=(.*?) suser=(.*?) src=(.*?) sport=(.*?) tierep=(.*?) in=(.*?) out=(.*?) requestMethod=(.*?) request=(.*?) '```
 
