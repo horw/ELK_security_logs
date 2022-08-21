@@ -22,7 +22,9 @@
 > Для того чтобы отключить аунтификация в config файле: docker-elk-main/elasticsearch/config/elasticsearch.yml изменим значение xpack.security.enabled на false (```xpack.security.enabled: false```)
 
 
-## Переслать лог в стек elk - Воспользуемся winlogbeat
+## Переслать лог в стек elk 
+> Воспользуемся winlogbeat
+
 [Установочный фаил winlogbeat](https://www.elastic.co/downloads/beats/winlogbeat)
 
 После того как установили файл с winlogbeat, необходимо обносить его config файл (В данном случае передача данных идет непосредственно elasticsearch, не через logstash)
