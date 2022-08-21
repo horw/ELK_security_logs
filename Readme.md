@@ -26,7 +26,7 @@
 ## Переслать лог в стек elk 
 > Воспользуемся winlogbeat
 
-[Установочный фаил winlogbeat](https://www.elastic.co/downloads/beats/winlogbeat)
+[Установочный файл winlogbeat](https://www.elastic.co/downloads/beats/winlogbeat)
 
 После того как установили файл с winlogbeat, необходимо обносить его config файл (В данном случае передача данных идет непосредственно elasticsearch, не через logstash)
 [Пример config файла](https://www.elastic.co/guide/en/beats/winlogbeat/current/reading-from-evtx.html)
