@@ -19,7 +19,7 @@
 Распакуем файлы и  с помошью команды:
 
 ```docker-compose up```
-После загрузки дополнительных пакетов, запуститься ELK\
+После загрузки дополнительных пакетов, запуститься ELK
 > Для того чтобы отключить аунтификация, в config файле: docker-elk-main/elasticsearch/config/elasticsearch.yml изменим значение xpack.security.enabled на false (```xpack.security.enabled: false```)
 
 
