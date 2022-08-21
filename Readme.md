@@ -17,9 +17,9 @@
 > https://github.com/deviantony/docker-elk\
 Распакуем файлы и  с помошью команды:\
 
-docker-compose up\
+```docker-compose up```
 После загрузки дополнительных пакетов, запуститься ELK\
-> Для того чтобы отключить аунтификация в config файле: docker-elk-main/elasticsearch/config/elasticsearch.yml изменим значение xpack.security.enabled на false (xpack.security.enabled: false)
+> Для того чтобы отключить аунтификация в config файле: docker-elk-main/elasticsearch/config/elasticsearch.yml изменим значение xpack.security.enabled на false (```xpack.security.enabled: false```)
 
 
 ## Реализовать парсинг событий - Воспользуемся winlogbeat
@@ -45,6 +45,6 @@ setup.template.pattern: "security-%{[agent.version]}"
 
 После необходимо открыть консоль и воспользоваться следуещей коммандой\
 .\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=(Полный путь к Security.evtx)
-ex: .\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=C:/Security.evtx
+ex: ```.\winlogbeat\winlogbeat.exe -e -c .\winlogbeat\winlogbeat-evtx.yml -E EVTX_FILE=C:/Security.evtx```
 
 
