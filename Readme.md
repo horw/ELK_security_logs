@@ -64,6 +64,7 @@ setup.template.pattern: "security-%{[agent.version]}"
 
 ## Обогатить событие сетевого подключения url адресом из лога proxy 
 > Реализация с помощью elasticsearch's update_by_query
+
 update_by_query позволяет нам изменять данные, которые мы получили из запроса(query). Преимущества данного метода: лаконичность его написания, во всех других вариантах неоходимо сначало обновить/создать \_mapping nested field 
 
 1.![image](https://user-images.githubusercontent.com/47724762/185794271-b7cb40d3-c766-42ca-b4d3-bed3aa85ce52.png)
